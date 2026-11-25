@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Lwando Mkosi</title>
+<meta name="description" content="Projects by Lwando Mkosi: Docker and Elastic Beanstalk, Linux server deployment, Ollama local AI, Jenkins CI/CD and Nginx on AWS EC2.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="index.html">Lwando Mkosi <span>/ IT Infrastructure</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="devops-challenge.html">DevOps Challenge</a>
+      <a href="credentials.html">Credentials</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="wrap">
+    <p class="page-eyebrow">Page 3 of 7</p>
+    <h1>Projects</h1>
+    <p>Hands-on builds across AWS, Linux, containers and local AI. Screenshots are from the work itself, with account details covered.</p>
+  </div>
+</div>
+
+<section id="projects">
+  <div class="wrap">
+    
+    <nav class="proj-index" aria-label="Projects">
+      <a href="#proj-docker">Docker and Elastic Beanstalk</a>
+      <a href="#proj-linux">Linux server deployment</a>
+      <a href="#proj-ollama">Local AI with Ollama</a>
+      <a href="#proj-jenkins">Jenkins CI/CD server</a>
+      <a href="#proj-nginx">Nginx web server</a>
+    </nav>
+
+    <article class="project" id="proj-docker">
+      <header>
+        <p class="project-tag">Containers · Docker · Elastic Beanstalk · November 2026 · NextWork guided project</p>
+        <h3>Deploy an app with Docker and AWS Elastic Beanstalk</h3>
+        <p class="project-lead">Installed Docker Desktop, ran an Nginx container, built my own container image from a Dockerfile, and deployed the containerised app to AWS Elastic Beanstalk in us-west-2, where the environment reached a healthy state.</p>
+      </header>
+      <ol class="steps">
+        <li>Installed Docker Desktop and learned how images, containers and the Docker daemon fit together.</li>
+        <li>Ran the official Nginx image with <code>docker run -d -p 80:80 nginx</code> and confirmed the welcome page at localhost.</li>
+        <li>Wrote a Dockerfile (<code>FROM nginx:latest</code>, <code>COPY index.html /usr/share/nginx/html/</code>, <code>EXPOSE 80</code>) and built a custom image with <code>docker build</code>.</li>
+        <li>Fixed a port conflict: the first container was already using port 80, so I stopped it before starting the custom one.</li>
+        <li>Created an Elastic Beanstalk application and environment on the Docker platform (Amazon Linux 2023) and deployed the image; the environment launched with health OK in about five minutes.</li>
+      </ol>
+      <ul class="tags"><li>Docker</li><li>Docker Desktop</li><li>Dockerfile</li><li>Nginx</li><li>AWS Elastic Beanstalk</li><li>Amazon Linux 2023</li></ul>
+      <p class="project-next"><b>Hardest part:</b> setting up the Elastic Beanstalk environment. Total time: about 2 hours 30 minutes.</p>
+      <div class="doc-actions" id="proj-docker-pdf">
+        <div class="doc-buttons">
+          <a class="btn" href="assets/docs/Deploy-an-App-with-Docker.pdf" download><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8m0 0L4.8 6.8M8 10l3.2-3.2M2.5 12.5v1h11v-1"/></svg> Download PDF</a>
+          <a class="btn btn-ghost" href="assets/docs/Deploy-an-App-with-Docker.pdf" target="_blank" rel="noopener">Open in a new tab</a>
+        </div>
+        <p class="doc-note">Account details are covered in the PDF.</p>
+        <details class="pdf-viewer">
+          <summary><span class="s-closed">Read the PDF here on the page</span><span class="s-open">Hide the PDF</span></summary>
+          <iframe src="assets/docs/Deploy-an-App-with-Docker.pdf#view=FitH" title="Deploy an app with Docker and AWS Elastic Beanstalk (PDF)" loading="lazy"></iframe>
+          <p class="pdf-fallback">PDF not showing? Some phones cannot display a PDF inside a page. <a href="assets/docs/Deploy-an-App-with-Docker.pdf" target="_blank" rel="noopener">Open it in a new tab</a> or <a href="assets/docs/Deploy-an-App-with-Docker.pdf" download>download it</a>.</p>
+        </details>
+      </div>
+      <div class="gallery" id="proj-docker-gallery"><div class="shot-group"><h4>Install Docker Desktop</h4><div class="shots"><figure id="fig-proj-docker-1" class="feature"><a href="#lb-proj-docker-1" aria-label="View screenshot: Docker Desktop installed and running"><img src="assets/projects/docker-01-desktop.png" alt="Docker Desktop containers screen" loading="lazy"></a><figcaption>Docker Desktop installed and running</figcaption></figure></div></div><div class="shot-group"><h4>Run an Nginx container</h4><div class="shots"><figure id="fig-proj-docker-2" class="wide"><a href="#lb-proj-docker-2" aria-label="View screenshot: The Nginx welcome page served from a container at localhost"><img src="assets/projects/docker-02-nginx-welcome.png" alt="Nginx welcome page" loading="lazy"></a><figcaption>The Nginx welcome page served from a container at localhost</figcaption></figure></div></div><div class="shot-group"><h4>Build and run a custom image</h4><div class="shots"><figure id="fig-proj-docker-3" class="wide"><a href="#lb-proj-docker-3" aria-label="View screenshot: My Dockerfile: base image, custom index.html and port 80"><img src="assets/projects/docker-03-dockerfile.png" alt="Dockerfile open in Notepad++" loading="lazy"></a><figcaption>My Dockerfile: base image, custom index.html and port 80</figcaption></figure><figure id="fig-proj-docker-4" class="wide"><a href="#lb-proj-docker-4" aria-label="View screenshot: My custom page served by my own container image"><img src="assets/projects/docker-04-custom-page.png" alt="Custom page served on localhost" loading="lazy"></a><figcaption>My custom page served by my own container image</figcaption></figure></div></div><div class="shot-group"><h4>Deploy to Elastic Beanstalk</h4><div class="shots"><figure id="fig-proj-docker-5" class="feature"><a href="#lb-proj-docker-5" aria-label="View screenshot: Environment launched, health OK, running Docker on Amazon Linux 2023 (account details covered)"><img src="assets/projects/docker-05-beanstalk.png" alt="Elastic Beanstalk environment overview" loading="lazy"></a><figcaption>Environment launched, health OK, running Docker on Amazon Linux 2023 (account details covered)</figcaption></figure></div></div></div>
+    </article>
+
+    <article class="project" id="proj-linux">
+      <header>
+        <p class="project-tag">Linux · Networking · Security · 30 October 2026</p>
+        <h3>Linux server deployment on AWS EC2</h3>
+        <p class="project-lead">Created, configured, secured and connected to an Amazon Linux 2023 server in us-west-2 (Oregon), applying command-line basics, file permissions, SSH key authentication, IP addressing, DNS, ports and security groups. Followed the workflow: create the VM, configure Linux, secure access, deploy a service, test connectivity.</p>
+      </header>
+      <div class="project-cols">
+        <div>
+          <h4>Linux CLI, permissions and SSH keys</h4>
+          <p>Worked as the non-root <b>ec2-user</b>, navigated with cd, ls and pwd, and locked the private .pem key to my user only with icacls (the Windows equivalent of chmod 400). Authenticated with an AWS key pair instead of passwords.</p>
+        </div>
+        <div>
+          <h4>IP, DNS, ports and firewalls</h4>
+          <p>Used the private address in the default VPC and the auto-assigned public address, connected by public DNS name, and restricted the security group to a single inbound rule: SSH on TCP 22 from my own IP as a /32.</p>
+        </div>
+        <div>
+          <h4>Deployed service and testing</h4>
+          <p>Set up a remote development environment: VS Code Remote-SSH attached to the instance through an SSH config entry. Verified with a terminal SSH login, VS Code remote status and 3/3 passed status checks.</p>
+        </div>
+      </div>
+      <ul class="tags"><li>Amazon EC2</li><li>Amazon Linux 2023</li><li>t3.micro</li><li>SSH key pairs</li><li>Security Groups</li><li>Default VPC</li><li>DNS</li><li>IAM user</li><li>VS Code Remote-SSH</li></ul>
+      <div class="doc-actions" id="proj-linux-pdf">
+        <div class="doc-buttons">
+          <a class="btn" href="assets/projects/Linux-Server-Deployment-AWS-EC2.pdf" download><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8m0 0L4.8 6.8M8 10l3.2-3.2M2.5 12.5v1h11v-1"/></svg> Download PDF</a>
+          <a class="btn btn-ghost" href="assets/projects/Linux-Server-Deployment-AWS-EC2.pdf" target="_blank" rel="noopener">Open in a new tab</a>
+        </div>
+        <p class="doc-note">Sensitive details are blurred in all screenshots.</p>
+        <details class="pdf-viewer">
+          <summary><span class="s-closed">Read the PDF here on the page</span><span class="s-open">Hide the PDF</span></summary>
+          <iframe src="assets/projects/Linux-Server-Deployment-AWS-EC2.pdf#view=FitH" title="Linux server deployment on AWS EC2 (PDF)" loading="lazy"></iframe>
+          <p class="pdf-fallback">PDF not showing? Some phones cannot display a PDF inside a page. <a href="assets/projects/Linux-Server-Deployment-AWS-EC2.pdf" target="_blank" rel="noopener">Open it in a new tab</a> or <a href="assets/projects/Linux-Server-Deployment-AWS-EC2.pdf" download>download it</a>.</p>
+        </details>
+      </div>
+      <div class="gallery" id="proj-linux-gallery">
+        <div class="shot-group"><h4>Step 1: Create the VM</h4><div class="shots"><figure id="fig-proj-linux-1"><a href="#lb-proj-linux-1" aria-label="View screenshot: Figure 1: IAM user used to work in the AWS account (name blurred)"><img src="assets/projects/linux-01-iam-user.jpg" alt="IAM users page in the AWS console" loading="lazy"></a><figcaption>Figure 1: IAM user used to work in the AWS account (name blurred)</figcaption></figure><figure id="fig-proj-linux-2"><a href="#lb-proj-linux-2" aria-label="View screenshot: Figure 2: EC2 launch wizard, instance name and Amazon Linux 2023 AMI"><img src="assets/projects/linux-02-launch-wizard.jpg" alt="EC2 launch wizard with Amazon Linux 2023 selected" loading="lazy"></a><figcaption>Figure 2: EC2 launch wizard, instance name and Amazon Linux 2023 AMI</figcaption></figure><figure id="fig-proj-linux-3"><a href="#lb-proj-linux-3" aria-label="View screenshot: Figure 3: Instance type t3.micro, key pair and network settings"><img src="assets/projects/linux-03-instance-type-keypair.jpg" alt="Instance type, key pair and network settings" loading="lazy"></a><figcaption>Figure 3: Instance type t3.micro, key pair and network settings</figcaption></figure><figure id="fig-proj-linux-4"><a href="#lb-proj-linux-4" aria-label="View screenshot: Figure 4: Instance running with 3/3 status checks passed"><img src="assets/projects/linux-04-running-status-checks.jpg" alt="EC2 instances list showing a running instance" loading="lazy"></a><figcaption>Figure 4: Instance running with 3/3 status checks passed</figcaption></figure><figure id="fig-proj-linux-5"><a href="#lb-proj-linux-5" aria-label="View screenshot: Figure 5: Instance summary with state, type, VPC and addresses (identifiers blurred)"><img src="assets/projects/linux-05-instance-summary.jpg" alt="EC2 instance summary page" loading="lazy"></a><figcaption>Figure 5: Instance summary with state, type, VPC and addresses (identifiers blurred)</figcaption></figure></div></div><div class="shot-group"><h4>Step 2: Configure Linux</h4><div class="shots"><figure id="fig-proj-linux-6"><a href="#lb-proj-linux-6" aria-label="View screenshot: Figure 6: Security group rules and 8 GiB gp3 storage at launch"><img src="assets/projects/linux-06-security-group-storage.jpg" alt="Security group and storage settings in the launch wizard" loading="lazy"></a><figcaption>Figure 6: Security group rules and 8 GiB gp3 storage at launch</figcaption></figure></div></div><div class="shot-group"><h4>Step 3: Secure access</h4><div class="shots"><figure id="fig-proj-linux-7"><a href="#lb-proj-linux-7" aria-label="View screenshot: Figure 7: Private key (.pem) file saved locally"><img src="assets/projects/linux-07-pem-key.jpg" alt="Key pair file saved on the local computer" loading="lazy"></a><figcaption>Figure 7: Private key (.pem) file saved locally</figcaption></figure><figure id="fig-proj-linux-8"><a href="#lb-proj-linux-8" aria-label="View screenshot: Figure 8: Fixing key permissions with icacls and logging in over SSH"><img src="assets/projects/linux-08-icacls-ssh-login.jpg" alt="PowerShell terminal with icacls commands and an SSH login to Amazon Linux 2023" loading="lazy"></a><figcaption>Figure 8: Fixing key permissions with icacls and logging in over SSH</figcaption></figure><figure id="fig-proj-linux-9"><a href="#lb-proj-linux-9" aria-label="View screenshot: Figure 9: Security groups list, launch-wizard-1 and default"><img src="assets/projects/linux-09-security-groups.jpg" alt="Security groups list" loading="lazy"></a><figcaption>Figure 9: Security groups list, launch-wizard-1 and default</figcaption></figure><figure id="fig-proj-linux-10"><a href="#lb-proj-linux-10" aria-label="View screenshot: Figure 10: Inbound rule allowing SSH on TCP 22 only from my IP"><img src="assets/projects/linux-10-inbound-rule-ssh.jpg" alt="Inbound rules editor with an SSH rule" loading="lazy"></a><figcaption>Figure 10: Inbound rule allowing SSH on TCP 22 only from my IP</figcaption></figure></div></div><div class="shot-group"><h4>Step 4: Deploy the service (VS Code Remote-SSH)</h4><div class="shots"><figure id="fig-proj-linux-11"><a href="#lb-proj-linux-11" aria-label="View screenshot: Figure 11: Copying the instance public DNS name from the console"><img src="assets/projects/linux-11-copy-public-dns.jpg" alt="Instance summary with public DNS" loading="lazy"></a><figcaption>Figure 11: Copying the instance public DNS name from the console</figcaption></figure><figure id="fig-proj-linux-12"><a href="#lb-proj-linux-12" aria-label="View screenshot: Figure 12: VS Code Remote-SSH, selecting the SSH host"><img src="assets/projects/linux-12-vscode-select-host.jpg" alt="VS Code SSH host picker" loading="lazy"></a><figcaption>Figure 12: VS Code Remote-SSH, selecting the SSH host</figcaption></figure><figure id="fig-proj-linux-13"><a href="#lb-proj-linux-13" aria-label="View screenshot: Figure 13: Choosing the SSH configuration file to update"><img src="assets/projects/linux-13-ssh-config-file.jpg" alt="VS Code prompt to choose an SSH config file" loading="lazy"></a><figcaption>Figure 13: Choosing the SSH configuration file to update</figcaption></figure><figure id="fig-proj-linux-14"><a href="#lb-proj-linux-14" aria-label="View screenshot: Figure 14: SSH config entry with HostName, IdentityFile and User"><img src="assets/projects/linux-14-ssh-config-entry.jpg" alt="SSH config file in VS Code" loading="lazy"></a><figcaption>Figure 14: SSH config entry with HostName, IdentityFile and User</figcaption></figure><figure id="fig-proj-linux-15"><a href="#lb-proj-linux-15" aria-label="View screenshot: Figure 15: VS Code opening the remote connection, Linux platform selected"><img src="assets/projects/linux-15-vscode-remote-opening.jpg" alt="VS Code opening a remote connection" loading="lazy"></a><figcaption>Figure 15: VS Code opening the remote connection, Linux platform selected</figcaption></figure></div></div><div class="shot-group"><h4>Step 5: Test connectivity</h4><div class="shots"><figure id="fig-proj-linux-16"><a href="#lb-proj-linux-16" aria-label="View screenshot: Figure 16: VS Code connected to the remote EC2 host over SSH"><img src="assets/projects/linux-16-vscode-connected.jpg" alt="VS Code attached to the remote host" loading="lazy"></a><figcaption>Figure 16: VS Code connected to the remote EC2 host over SSH</figcaption></figure></div></div>
+      </div>
+    </article>
+
+    <article class="project" id="proj-ollama">
+      <header>
+        <p class="project-tag">Local AI · Windows · October 2026 · NextWork guided project</p>
+        <h3>Running AI locally with Ollama</h3>
+        <p class="project-lead">Installed Ollama on a Windows machine, pulled the small qwen2.5:0.5b model and ran it entirely on my own computer, to understand what local AI can and cannot do.</p>
+      </header>
+      <ol class="steps">
+        <li>Installed Ollama and verified the service from PowerShell with <code>curl.exe http://localhost:11434</code>, which replied "Ollama is running".</li>
+        <li>Pulled the model with <code>ollama pull qwen2.5:0.5b</code> (397 MB) and confirmed it with <code>ollama list</code>.</li>
+        <li>Chatted with it using <code>ollama run qwen2.5:0.5b</code>; answers came back with no internet connection needed.</li>
+        <li>Tested its limits: with only 0.5 billion parameters it gave a shaky answer to a history question and could not know who I am, calling me "Alibaba Cloud Bot".</li>
+        <li>Learned what Retrieval-Augmented Generation (RAG) is for: giving a small model your own data so it can answer what it otherwise cannot.</li>
+      </ol>
+      <ul class="tags"><li>Ollama</li><li>qwen2.5:0.5b</li><li>PowerShell</li><li>Local LLMs</li><li>Model sizes (parameters)</li><li>RAG (concepts)</li></ul>
+      <p class="project-next"><b>Time:</b> about 40 minutes. Key idea: model size (parameters) decides how detailed and reliable local answers can be.</p>
+      <div class="doc-actions" id="proj-ollama-pdf">
+        <div class="doc-buttons">
+          <a class="btn" href="assets/docs/Run-Ollama-on-Your-Own-Machine.pdf" download><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8m0 0L4.8 6.8M8 10l3.2-3.2M2.5 12.5v1h11v-1"/></svg> Download PDF</a>
+          <a class="btn btn-ghost" href="assets/docs/Run-Ollama-on-Your-Own-Machine.pdf" target="_blank" rel="noopener">Open in a new tab</a>
+        </div>
+        <details class="pdf-viewer">
+          <summary><span class="s-closed">Read the PDF here on the page</span><span class="s-open">Hide the PDF</span></summary>
+          <iframe src="assets/docs/Run-Ollama-on-Your-Own-Machine.pdf#view=FitH" title="Running AI locally with Ollama (PDF)" loading="lazy"></iframe>
+          <p class="pdf-fallback">PDF not showing? Some phones cannot display a PDF inside a page. <a href="assets/docs/Run-Ollama-on-Your-Own-Machine.pdf" target="_blank" rel="noopener">Open it in a new tab</a> or <a href="assets/docs/Run-Ollama-on-Your-Own-Machine.pdf" download>download it</a>.</p>
+        </details>
+      </div>
+      <div class="gallery" id="proj-ollama-gallery"><div class="shot-group"><h4>Install and verify Ollama</h4><div class="shots"><figure id="fig-proj-ollama-1" class="wide"><a href="#lb-proj-ollama-1" aria-label="View screenshot: Ollama reports it is running on localhost:11434"><img src="assets/projects/ollama-01-running.png" alt="PowerShell showing Ollama is running" loading="lazy"></a><figcaption>Ollama reports it is running on localhost:11434</figcaption></figure></div></div><div class="shot-group"><h4>Pull and chat with a model</h4><div class="shots"><figure id="fig-proj-ollama-2" class="feature"><a href="#lb-proj-ollama-2" aria-label="View screenshot: Pulling qwen2.5:0.5b (397 MB) and confirming it with ollama list"><img src="assets/projects/ollama-02-pull-model.png" alt="PowerShell pulling the qwen2.5 model" loading="lazy"></a><figcaption>Pulling qwen2.5:0.5b (397 MB) and confirming it with ollama list</figcaption></figure><figure id="fig-proj-ollama-3" class="wide"><a href="#lb-proj-ollama-3" aria-label="View screenshot: Chatting with the model locally, with no internet connection"><img src="assets/projects/ollama-03-chat.png" alt="Chat with the local model" loading="lazy"></a><figcaption>Chatting with the model locally, with no internet connection</figcaption></figure></div></div><div class="shot-group"><h4>Exploring the limits of a small model</h4><div class="shots"><figure id="fig-proj-ollama-4" class="wide"><a href="#lb-proj-ollama-4" aria-label="View screenshot: A 0.5B model cannot know who I am and answers as &quot;Alibaba Cloud Bot&quot;"><img src="assets/projects/ollama-04-limits.png" alt="Model answering a question about my name" loading="lazy"></a><figcaption>A 0.5B model cannot know who I am and answers as "Alibaba Cloud Bot"</figcaption></figure></div></div></div>
+    </article>
+
+    <article class="project" id="proj-jenkins">
+      <header>
+        <p class="project-tag">DevOps · CI/CD · September 2026</p>
+        <h3>Jenkins CI/CD server on AWS EC2</h3>
+        <p class="project-lead">Deployed and configured a Jenkins 2.568.3 automation server from scratch on an EC2 instance in us-east-1, as the first step toward building CI/CD pipelines.</p>
+      </header>
+      <ol class="steps">
+        <li>Launched an EC2 instance and connected through EC2 Instance Connect.</li>
+        <li>Installed OpenJDK as the Jenkins runtime dependency.</li>
+        <li>Added the official Jenkins Debian repository from pkg.jenkins.io and installed the LTS release.</li>
+        <li>Configured Jenkins to run on port 8080 and opened that port with a security group inbound rule.</li>
+        <li>Unlocked Jenkins with the initial admin password, completed the setup wizard and reached the dashboard.</li>
+      </ol>
+      <ul class="tags"><li>Amazon EC2</li><li>Ubuntu Linux</li><li>OpenJDK</li><li>Jenkins LTS</li><li>Security Groups</li><li>EC2 Instance Connect</li></ul>
+      <p class="project-next"><b>Next:</b> first pipeline, plugins, and integration with GitHub and Docker.</p>
+      <div class="gallery" id="proj-jenkins-gallery">
+        <div class="shot-group"><h4>Setup wizard to dashboard</h4><div class="shots"><figure id="fig-proj-jenkins-1"><a href="#lb-proj-jenkins-1" aria-label="View screenshot: Unlock Jenkins with the initial admin password"><img src="assets/projects/jenkins-unlock.jpg" alt="Jenkins unlock screen" loading="lazy"></a><figcaption>Unlock Jenkins with the initial admin password</figcaption></figure><figure id="fig-proj-jenkins-2"><a href="#lb-proj-jenkins-2" aria-label="View screenshot: Setup complete: Jenkins 2.568.3"><img src="assets/projects/jenkins-ready.jpg" alt="Jenkins is ready screen" loading="lazy"></a><figcaption>Setup complete: Jenkins 2.568.3</figcaption></figure><figure id="fig-proj-jenkins-3"><a href="#lb-proj-jenkins-3" aria-label="View screenshot: Welcome to Jenkins: the dashboard on first login"><img src="assets/projects/jenkins-dashboard.jpg" alt="Jenkins dashboard" loading="lazy"></a><figcaption>Welcome to Jenkins: the dashboard on first login</figcaption></figure></div></div>
+      </div>
+    </article>
+
+    <article class="project" id="proj-nginx">
+      <header>
+        <p class="project-tag">Web server · Linux</p>
+        <h3>Nginx web server on AWS EC2</h3>
+        <p class="project-lead">Launched a public web server on a free-tier EC2 instance and served a customised page, from launch to clean-up.</p>
+      </header>
+      <ol class="steps">
+        <li>Launched an Amazon Linux 2023 t2.micro instance and created an RSA .pem key pair.</li>
+        <li>Connected with EC2 Instance Connect, or over SSH with <code>ssh -i key.pem ec2-user@public-DNS</code>.</li>
+        <li>Installed Nginx with yum, then started it and enabled it at boot with systemctl.</li>
+        <li>Opened ports 80 and 443 in the security group inbound rules so the default "Welcome to nginx!" page loaded.</li>
+        <li>Customised the page by editing <code>index.html</code> in <code>/usr/share/nginx/html</code>.</li>
+        <li>Terminated the instance afterwards to avoid charges.</li>
+      </ol>
+      <ul class="tags"><li>Amazon EC2</li><li>Amazon Linux 2023</li><li>Nginx</li><li>systemctl</li><li>Security Groups</li><li>yum</li></ul>
+      <p class="project-next"><b>Lessons:</b> check the security group first when a page will not load, restrict SSH to your own IP outside of demos, and always terminate test instances.</p>
+    </article>
+  </div>
+</section>
+
+<div class="pager"><div class="wrap"><a class="prev" href="experience.html"><span>← Previous</span><strong>Experience</strong></a><a class="next" href="devops-challenge.html"><span>Next · Page 4 of 7</span><strong>DevOps Challenge</strong></a></div></div>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Lwando Mkosi</div>
+    <div class="social" aria-label="Social links">
+      <a class="soc-ico" href="https://www.linkedin.com/in/lwando-mkosi-a2227b27a" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="ico ico-linkedin" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a class="soc-ico" href="https://github.com/Skills-1" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg class="ico ico-github" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+      <a class="soc-ico" href="https://www.facebook.com/lwando.mkosi" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg class="ico ico-facebook" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    </div>
+    <div>Built with HTML and CSS</div>
+  </div>
+</footer>
+
+
+<!-- screenshot viewer: pure CSS, opens with :target -->
+<div class="lightbox" id="lb-proj-docker-1" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-docker-1" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-docker-1">Close ✕</a>
+  <a class="lb-nav lb-next" href="#lb-proj-docker-2" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/docker-01-desktop.png" alt="Docker Desktop containers screen" loading="lazy"><figcaption>Docker Desktop installed and running <span class="lb-count">· 1 of 5</span> · <a href="assets/projects/docker-01-desktop.png" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-docker-2" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-docker-2" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-docker-2">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-docker-1" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-docker-3" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/docker-02-nginx-welcome.png" alt="Nginx welcome page" loading="lazy"><figcaption>The Nginx welcome page served from a container at localhost <span class="lb-count">· 2 of 5</span> · <a href="assets/projects/docker-02-nginx-welcome.png" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-docker-3" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-docker-3" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-docker-3">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-docker-2" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-docker-4" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/docker-03-dockerfile.png" alt="Dockerfile open in Notepad++" loading="lazy"><figcaption>My Dockerfile: base image, custom index.html and port 80 <span class="lb-count">· 3 of 5</span> · <a href="assets/projects/docker-03-dockerfile.png" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-docker-4" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-docker-4" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-docker-4">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-docker-3" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-docker-5" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/docker-04-custom-page.png" alt="Custom page served on localhost" loading="lazy"><figcaption>My custom page served by my own container image <span class="lb-count">· 4 of 5</span> · <a href="assets/projects/docker-04-custom-page.png" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-docker-5" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-docker-5" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-docker-5">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-docker-4" aria-label="Previous screenshot">‹</a>
+  <figure class="lb-fig"><img src="assets/projects/docker-05-beanstalk.png" alt="Elastic Beanstalk environment overview" loading="lazy"><figcaption>Environment launched, health OK, running Docker on Amazon Linux 2023 (account details covered) <span class="lb-count">· 5 of 5</span> · <a href="assets/projects/docker-05-beanstalk.png" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-1" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-1" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-1">Close ✕</a>
+  <a class="lb-nav lb-next" href="#lb-proj-linux-2" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-01-iam-user.jpg" alt="IAM users page in the AWS console" loading="lazy"><figcaption>Figure 1: IAM user used to work in the AWS account (name blurred) <span class="lb-count">· 1 of 16</span> · <a href="assets/projects/linux-01-iam-user.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-2" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-2" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-2">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-1" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-linux-3" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-02-launch-wizard.jpg" alt="EC2 launch wizard with Amazon Linux 2023 selected" loading="lazy"><figcaption>Figure 2: EC2 launch wizard, instance name and Amazon Linux 2023 AMI <span class="lb-count">· 2 of 16</span> · <a href="assets/projects/linux-02-launch-wizard.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-3" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-3" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-3">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-2" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-linux-4" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-03-instance-type-keypair.jpg" alt="Instance type, key pair and network settings" loading="lazy"><figcaption>Figure 3: Instance type t3.micro, key pair and network settings <span class="lb-count">· 3 of 16</span> · <a href="assets/projects/linux-03-instance-type-keypair.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-4" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-4" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-4">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-3" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-linux-5" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-04-running-status-checks.jpg" alt="EC2 instances list showing a running instance" loading="lazy"><figcaption>Figure 4: Instance running with 3/3 status checks passed <span class="lb-count">· 4 of 16</span> · <a href="assets/projects/linux-04-running-status-checks.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-5" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-5" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-5">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-4" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-linux-6" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-05-instance-summary.jpg" alt="EC2 instance summary page" loading="lazy"><figcaption>Figure 5: Instance summary with state, type, VPC and addresses (identifiers blurred) <span class="lb-count">· 5 of 16</span> · <a href="assets/projects/linux-05-instance-summary.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-6" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-6" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-6">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-5" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-linux-7" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-06-security-group-storage.jpg" alt="Security group and storage settings in the launch wizard" loading="lazy"><figcaption>Figure 6: Security group rules and 8 GiB gp3 storage at launch <span class="lb-count">· 6 of 16</span> · <a href="assets/projects/linux-06-security-group-storage.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-7" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-7" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-7">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-6" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-linux-8" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-07-pem-key.jpg" alt="Key pair file saved on the local computer" loading="lazy"><figcaption>Figure 7: Private key (.pem) file saved locally <span class="lb-count">· 7 of 16</span> · <a href="assets/projects/linux-07-pem-key.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-8" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-8" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-8">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-7" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-linux-9" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-08-icacls-ssh-login.jpg" alt="PowerShell terminal with icacls commands and an SSH login to Amazon Linux 2023" loading="lazy"><figcaption>Figure 8: Fixing key permissions with icacls and logging in over SSH <span class="lb-count">· 8 of 16</span> · <a href="assets/projects/linux-08-icacls-ssh-login.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-9" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-9" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-9">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-8" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-linux-10" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-09-security-groups.jpg" alt="Security groups list" loading="lazy"><figcaption>Figure 9: Security groups list, launch-wizard-1 and default <span class="lb-count">· 9 of 16</span> · <a href="assets/projects/linux-09-security-groups.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-10" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-10" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-10">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-9" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-linux-11" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-10-inbound-rule-ssh.jpg" alt="Inbound rules editor with an SSH rule" loading="lazy"><figcaption>Figure 10: Inbound rule allowing SSH on TCP 22 only from my IP <span class="lb-count">· 10 of 16</span> · <a href="assets/projects/linux-10-inbound-rule-ssh.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-11" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-11" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-11">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-10" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-linux-12" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-11-copy-public-dns.jpg" alt="Instance summary with public DNS" loading="lazy"><figcaption>Figure 11: Copying the instance public DNS name from the console <span class="lb-count">· 11 of 16</span> · <a href="assets/projects/linux-11-copy-public-dns.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-12" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-12" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-12">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-11" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-linux-13" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-12-vscode-select-host.jpg" alt="VS Code SSH host picker" loading="lazy"><figcaption>Figure 12: VS Code Remote-SSH, selecting the SSH host <span class="lb-count">· 12 of 16</span> · <a href="assets/projects/linux-12-vscode-select-host.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-13" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-13" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-13">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-12" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-linux-14" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-13-ssh-config-file.jpg" alt="VS Code prompt to choose an SSH config file" loading="lazy"><figcaption>Figure 13: Choosing the SSH configuration file to update <span class="lb-count">· 13 of 16</span> · <a href="assets/projects/linux-13-ssh-config-file.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-14" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-14" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-14">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-13" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-linux-15" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-14-ssh-config-entry.jpg" alt="SSH config file in VS Code" loading="lazy"><figcaption>Figure 14: SSH config entry with HostName, IdentityFile and User <span class="lb-count">· 14 of 16</span> · <a href="assets/projects/linux-14-ssh-config-entry.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-15" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-15" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-15">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-14" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-linux-16" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-15-vscode-remote-opening.jpg" alt="VS Code opening a remote connection" loading="lazy"><figcaption>Figure 15: VS Code opening the remote connection, Linux platform selected <span class="lb-count">· 15 of 16</span> · <a href="assets/projects/linux-15-vscode-remote-opening.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-linux-16" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-linux-16" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-linux-16">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-linux-15" aria-label="Previous screenshot">‹</a>
+  <figure class="lb-fig"><img src="assets/projects/linux-16-vscode-connected.jpg" alt="VS Code attached to the remote host" loading="lazy"><figcaption>Figure 16: VS Code connected to the remote EC2 host over SSH <span class="lb-count">· 16 of 16</span> · <a href="assets/projects/linux-16-vscode-connected.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-ollama-1" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-ollama-1" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-ollama-1">Close ✕</a>
+  <a class="lb-nav lb-next" href="#lb-proj-ollama-2" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/ollama-01-running.png" alt="PowerShell showing Ollama is running" loading="lazy"><figcaption>Ollama reports it is running on localhost:11434 <span class="lb-count">· 1 of 4</span> · <a href="assets/projects/ollama-01-running.png" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-ollama-2" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-ollama-2" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-ollama-2">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-ollama-1" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-ollama-3" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/ollama-02-pull-model.png" alt="PowerShell pulling the qwen2.5 model" loading="lazy"><figcaption>Pulling qwen2.5:0.5b (397 MB) and confirming it with ollama list <span class="lb-count">· 2 of 4</span> · <a href="assets/projects/ollama-02-pull-model.png" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-ollama-3" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-ollama-3" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-ollama-3">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-ollama-2" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-ollama-4" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/ollama-03-chat.png" alt="Chat with the local model" loading="lazy"><figcaption>Chatting with the model locally, with no internet connection <span class="lb-count">· 3 of 4</span> · <a href="assets/projects/ollama-03-chat.png" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-ollama-4" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-ollama-4" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-ollama-4">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-ollama-3" aria-label="Previous screenshot">‹</a>
+  <figure class="lb-fig"><img src="assets/projects/ollama-04-limits.png" alt="Model answering a question about my name" loading="lazy"><figcaption>A 0.5B model cannot know who I am and answers as "Alibaba Cloud Bot" <span class="lb-count">· 4 of 4</span> · <a href="assets/projects/ollama-04-limits.png" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-jenkins-1" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-jenkins-1" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-jenkins-1">Close ✕</a>
+  <a class="lb-nav lb-next" href="#lb-proj-jenkins-2" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/jenkins-unlock.jpg" alt="Jenkins unlock screen" loading="lazy"><figcaption>Unlock Jenkins with the initial admin password <span class="lb-count">· 1 of 3</span> · <a href="assets/projects/jenkins-unlock.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-jenkins-2" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-jenkins-2" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-jenkins-2">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-jenkins-1" aria-label="Previous screenshot">‹</a><a class="lb-nav lb-next" href="#lb-proj-jenkins-3" aria-label="Next screenshot">›</a>
+  <figure class="lb-fig"><img src="assets/projects/jenkins-ready.jpg" alt="Jenkins is ready screen" loading="lazy"><figcaption>Setup complete: Jenkins 2.568.3 <span class="lb-count">· 2 of 3</span> · <a href="assets/projects/jenkins-ready.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+<div class="lightbox" id="lb-proj-jenkins-3" role="dialog" aria-label="Screenshot viewer">
+  <a class="lb-bg" href="#fig-proj-jenkins-3" aria-label="Close screenshot"></a>
+  <a class="lb-close" href="#fig-proj-jenkins-3">Close ✕</a>
+  <a class="lb-nav lb-prev" href="#lb-proj-jenkins-2" aria-label="Previous screenshot">‹</a>
+  <figure class="lb-fig"><img src="assets/projects/jenkins-dashboard.jpg" alt="Jenkins dashboard" loading="lazy"><figcaption>Welcome to Jenkins: the dashboard on first login <span class="lb-count">· 3 of 3</span> · <a href="assets/projects/jenkins-dashboard.jpg" target="_blank" rel="noopener">Open full size</a></figcaption></figure>
+</div>
+
+</body>
+</html>
